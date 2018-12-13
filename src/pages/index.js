@@ -2,6 +2,7 @@ import React from 'react'
 import styled, { keyframes } from 'styled-components'
 
 import Layout from '../components/layout'
+import { Logo } from '../components/logo'
 
 const neon = keyframes`
 	from {
@@ -30,8 +31,8 @@ const Title = styled.h1`
   letter-spacing: -6px;
   cursor: crosshair;
   transition: all 0.2s ease;
-  &:hover {
-    color: white;
+  &:hover svg g {
+    fill: white;
     animation: ${neon} 1.5s ease-in-out infinite alternate;
   }
 `
@@ -49,7 +50,7 @@ class IndexPage extends React.PureComponent {
       <Layout>
         <Wrapper className={hover ? 'hover' : ''}>
           <Title onMouseOver={this.hover} onMouseOut={this.unHover}>
-            Bold
+            <Logo color="black" width="400" />
           </Title>
         </Wrapper>
       </Layout>
